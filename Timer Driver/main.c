@@ -2,7 +2,7 @@
  * Timer Derivers.c
  *
  * Created: 17-Jul-21
- * Author : PC
+ * Author : Ahmed Azazy
  */ 
 
 #include <avr/io.h>
