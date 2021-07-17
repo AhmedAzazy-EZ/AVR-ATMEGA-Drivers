@@ -2,7 +2,7 @@
  * timer.h
  *
  * Created: 17-Jul-21
- *  Author: PC
+ *  Author: Ahmed Azazy
  */ 
 
 
