@@ -1,7 +1,7 @@
 /*
  * timer.h
  *
- * Created: 17-Jul-21 1:02:01 AM
+ * Created: 17-Jul-21
  *  Author: PC
  */ 
 
