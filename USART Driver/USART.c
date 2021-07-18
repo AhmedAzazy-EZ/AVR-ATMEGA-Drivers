@@ -2,7 +2,7 @@
  * USART.c
  *
  * Created: 18-Jul-21
- *  Author: PC
+ *  Author: Ahmed Azazy
  */ 
 
 #include <avr/io.h>
