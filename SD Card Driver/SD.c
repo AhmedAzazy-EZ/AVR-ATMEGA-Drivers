@@ -80,13 +80,13 @@ uint8_t SD_readBlock(uint32_t address , uint32_t blockLength , uint8_t * buffer)
 		//wait for start token
 		while((SD_Response = SPI_Send_Receive(0xFF)) != 0xFE);
 		
-				for(i=0; i < blockLength ; i++)
-				{
-					buffer[i]=SPI_Send_Receive(0xFF);
-				}
+		for(i=0; i < blockLength ; i++)
+			{
+				buffer[i]=SPI_Send_Receive(0xFF);
+			}
 				//Two additional SPI transfer for CRC , even if ignored
-				SPI_Send_Receive(0xFF);
-				SPI_Send_Receive(0xFF);
+		SPI_Send_Receive(0xFF);
+		SPI_Send_Receive(0xFF);
 		return 0x00;		
 	}
 	
