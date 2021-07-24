@@ -15,7 +15,7 @@
 uint8_t SD_setSPI_Mode(void )
 {
 	volatile uint8_t response = 0xFF ;
-	volatile int8_t i = 0;
+	volatile int32_t i = 0;
 	SD_PORT |= (1<<CS);
 	
 	for( ; i < 10 ; i++)
@@ -35,7 +35,7 @@ uint8_t SD_setSPI_Mode(void )
 	SPI_Send_Receive(0x95);
 	
 	//wait for response
-	while((response = SPI_Send_Receive(0xFF)) == 0xFF && i++ < 10);
+	while((response = SPI_Send_Receive(0xFF)) == 0xFF && i++ < 40000);
 	return response;	
 }
 
@@ -50,7 +50,7 @@ uint8_t SD_sendCommand(uint8_t cmd , uint32_t arg)
 	SPI_Send_Receive(arg);
 	//check Redundency
 	SPI_Send_Receive(0x95);
-	while(response == 0xFF  && retry++ < 10)
+	while(response == 0xFF  && retry++ < 40000)
 	{
 		response =  SPI_Send_Receive(0xFF);
 	}
