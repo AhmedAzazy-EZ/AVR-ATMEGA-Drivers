@@ -217,7 +217,6 @@ ISR(TWI_vect)
 			//virtually disconnect the device.
 			counter = 0;
 			try_again = 0;
-			TWCR &=~(1<<TWEA);
 			TWCR |=(1<<TWINT);
 		} 
 		break;
@@ -254,6 +253,14 @@ ISR(TWI_vect)
 		case 0x68 : 
 			TWCR |=(1<<TWINT);
 			break ;
+		
+		
+		//Previously addressed with own SLA+W; data has been received; NOT ACK has been returned
+		case 0x88 : 
+		TWCR &=~(1<<TWEA);
+		TWCR |= (1<<TWINT);
+		break ;
+		
 		
 		// Previously addressed with own SLA+W; data has been received; ACK has been returned
 		case 0x80 :
