@@ -9,7 +9,7 @@
 						 | NOTES |
 						  ------
 
-1) In case of Slave Transmitter mode , you have to Enable Ack generation 
+1) In case of Slave Receiver mode , you have to Enable Ack generation 
 	before anytime you use it.
 	
 	
