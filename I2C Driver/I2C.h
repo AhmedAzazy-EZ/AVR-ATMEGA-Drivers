@@ -18,9 +18,9 @@
 
 #define I2C_BUFFER_LENGHT 100
 #define MASTER_TRANS 0
-#define MASTER_RECEIVE 0
+#define MASTER_RECEIVE 1
 #define SLAVE_TRANS 0
-#define SLAVE_RECEIVE 1
+#define SLAVE_RECEIVE 0
 
 
 /******************************************/
@@ -29,8 +29,11 @@ extern char I2C_Buffer[I2C_BUFFER_LENGHT];
 extern uint16_t counter;
 extern uint16_t I2C_DataLength;
 extern uint8_t I2C_Mode ;
-extern uint8_t target_Address;
 
+
+#if MASTER_TRANS == 1 || MASTER_RECEIVE == 1
+	extern uint8_t target_Address;
+#endif
 
 
 typedef enum genteric
