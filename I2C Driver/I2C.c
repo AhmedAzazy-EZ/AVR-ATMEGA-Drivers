@@ -87,10 +87,6 @@ void I2C_SendAddress(void )
 
 ISR(TWI_vect)
 {	
-	//while(!(TWCR& 1<< TWINT));
-	//TWCR |= (1<<TWINT);
-	//I2C_Buffer[counter] = TWDR;
-	//counter++;
 	switch(TWSR & 0xF8)
 	{
 		#if MASTER_TRANS == 1
