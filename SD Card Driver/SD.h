@@ -10,11 +10,9 @@
 #define SD_H_
 #include <stdint.h>
 
-#define SD_PORT PORTB
-#define CS (4)
-#define MOSI (5)
-#define MISO (6)
-#define SCK (7)
+#define SD_PORT PORTC
+#define SD_DDR DDRC
+#define SD_CS (0)
 
 uint8_t SD_setSPI_Mode(void );
 

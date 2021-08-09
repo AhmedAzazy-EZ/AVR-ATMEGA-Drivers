@@ -12,6 +12,14 @@
 #include <stdint.h>
 
 
+#define SPI_PORT PORTB
+#define SPI_DRR DDRB
+#define CS (0)
+#define MOSI (2)
+#define MISO (3)
+#define SCK (1)
+
+
 typedef enum generic
 {
 	DISABLE , 
